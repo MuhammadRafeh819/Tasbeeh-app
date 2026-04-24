@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tasbeeh · تسبيح</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Arch / mihrab ornament -->
+  <div class="arch-wrap">
+    <svg viewBox="0 0 360 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+      <defs>
+        <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f5f0e8"/>
+          <stop offset="100%" stop-color="#faf7f2"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 L0,60 Q180,-20 360,60 L360,100 Z" fill="url(#ag)"/>
+      <path d="M0,100 L0,60 Q180,-20 360,60" stroke="#c9a84c" stroke-width="1.5" opacity=".55"/>
+      <line x1="0" y1="100" x2="360" y2="100" stroke="#c9a84c" stroke-width=".5" opacity=".4"/>
+      <circle cx="180" cy="12" r="6" fill="#c9a84c" opacity=".65"/>
+      <circle cx="180" cy="12" r="3" fill="#f5f0e8"/>
+      <line x1="148" y1="24" x2="212" y2="24" stroke="#c9a84c" stroke-width=".5" opacity=".4"/>
+      <circle cx="60"  cy="72" r="3" fill="#c9a84c" opacity=".3"/>
+      <circle cx="300" cy="72" r="3" fill="#c9a84c" opacity=".3"/>
+    </svg>
+  </div>
+
+  <!-- Main card -->
+  <div class="card">
+    <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+    <div class="divider"></div>
+
+    <div class="dhikr-arabic" id="dhikr-ar">سُبْحَانَ اللهِ</div>
+    <div class="dhikr-trans"  id="dhikr-en">Glory be to Allah</div>
+
+    <!-- Tap ring -->
+    <div class="ring" id="ring">
+      <div class="ring-num" id="counter">0</div>
+      <div class="ring-hint">tap to count</div>
+    </div>
+
+    <!-- Progress -->
+    <div class="prog-wrap">
+      <div class="prog-labels">
+        <span>Progress</span>
+        <strong id="prog-lbl">0 / 33</strong>
+      </div>
+      <div class="prog-track">
+        <div class="prog-fill" id="prog-fill"></div>
+      </div>
+    </div>
+
+    <!-- Beads -->
+    <div class="beads" id="beads"></div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="btn btn-undo" id="undoBtn">− Undo</button>
+      <button class="btn btn-reset" id="resetBtn">↺ Reset</button>
+    </div>
+
+    <!-- Dhikr selector -->
+    <div class="dhikr-grid">
+      <button class="d-btn" id="dhikrBtn1">
+        <span class="ar">سُبْحَانَ اللهِ</span><span class="ct">33×</span>
+      </button>
+      <button class="d-btn" id="dhikrBtn2">
+        <span class="ar">الْحَمْدُ لِلَّهِ</span><span class="ct">33×</span>
+      </button>
+      <button class="d-btn" id="dhikrBtn3">
+        <span class="ar">اللهُ أَكْبَرُ</span><span class="ct">34×</span>
+      </button>
+    </div>
+
+    <!-- Milestone dots -->
+    <div class="milestones" id="milestones"></div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-n" id="total-el">0</div>
+        <div class="stat-l">Total today</div>
+      </div>
+      <div class="stat-sep"></div>
+      <div class="stat">
+        <div class="stat-n" id="sets-el">0</div>
+        <div class="stat-l">Completed sets</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">تَسْبِيح · Tasbeeh Counter</div>
+
+    <script src="app.js"></script>
+</body>
+</html>
